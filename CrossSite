@@ -1,0 +1,22 @@
+/**
+ * @Describe: 前后端分离项目遇到的数据跨域问题
+ * @Author: HuTao
+ * @Date: 2017/12/27
+ */
+import javax.servlet.http.HttpServletResponse;
+
+public class CrossSite {
+
+    /*
+      * response请求跨域公共设置
+      */
+    public static HttpServletResponse SetHttpServletResponse(
+            HttpServletResponse response) {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods",
+                "POST, GET, OPTIONS, DELETE");
+        response.setHeader("Access-Control-Max-Age", "3600");
+        response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
+        return response;
+    }
+}
